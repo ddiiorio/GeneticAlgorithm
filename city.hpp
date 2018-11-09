@@ -3,21 +3,25 @@
 //
 #ifndef GENETICALGORITHM_CITY_HPP
 #define GENETICALGORITHM_CITY_HPP
-#include <iostream>
-using namespace std;
 
-constexpr int max = 1000;
-constexpr int min = 0;
+#include <iostream>
+#include <utility>
+#include <random>
+using namespace std;
 
 class city {
 protected:
     string name;
     int x;
     int y;
+    constexpr static auto max = 1000;
+    constexpr static auto min = 0;
 
 public:
-    city() = default;
+    city();
     city(string, int, int);
+    string gen_random();
+    friend ostream &operator << (ostream &os, const city & c);
 };
 
 
