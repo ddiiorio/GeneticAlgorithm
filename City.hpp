@@ -11,11 +11,11 @@ using namespace std;
 
 class City {
 private:
+    constexpr static auto MAP_BOUNDARY = 1000;
+    constexpr static auto MIN = 0;
     string name;
     int x;
     int y;
-    constexpr static auto MAP_BOUNDARY = 1000;
-    constexpr static auto MIN = 0;
 
 public:
     City();

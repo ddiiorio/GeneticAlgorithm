@@ -13,7 +13,7 @@ class Tour {
 private:
     constexpr static int CITIES_IN_TOUR = 32;
     constexpr static int SHUFFLES = 64;
-    vector<City> tour;
+    vector<City> cities;
     double fitness;
     int distance;
 

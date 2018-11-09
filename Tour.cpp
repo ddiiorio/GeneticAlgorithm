@@ -8,7 +8,7 @@
  */
 Tour::Tour() : fitness{0}, distance{0} {
     for (int i = 0; i < CITIES_IN_TOUR; ++i) {
-        tour.emplace_back();
+        cities.emplace_back();
     }
 }
 
@@ -18,7 +18,7 @@ Tour::Tour() : fitness{0}, distance{0} {
  * @return City
  */
 City Tour::getCity(int pos) {
-    return tour.at(pos);
+    return cities.at(pos);
 }
 
 /**
@@ -26,7 +26,7 @@ City Tour::getCity(int pos) {
  */
 void Tour::shuffleCities() {
     auto rng = default_random_engine {};
-    shuffle(tour.begin(), tour.end(), rng);
+    shuffle(cities.begin(), cities.end(), rng);
 }
 
 /**
@@ -37,14 +37,14 @@ int Tour::getTourDistance() {
     if (distance == 0) {
         int tourDistance = 0;
         // Loop through our Tour's cities
-        for (int cityIndex = 0; cityIndex < tour.size(); cityIndex++) {
+        for (int cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
             // Get City we're travelling from
             City fromCity = getCity(cityIndex);
             // City we're travelling to
             City destinationCity;
             // Check we're not on our Tour's last City, if we are set our
             // Tour's final destination City to our starting City
-            if(cityIndex + 1 < tour.size()){
+            if(cityIndex + 1 < cities.size()){
                 destinationCity = getCity(cityIndex + 1);
             }
             else{
@@ -75,11 +75,11 @@ double Tour::determineFitness() {
  * @return boolean
  */
 bool Tour::containsCity(City city1) {
-    auto it = find(tour.begin(), tour.end(), city1);
-    return it != tour.end();
+    auto it = find(cities.begin(), cities.end(), city1);
+    return it != cities.end();
 }
 
 const vector<City> &Tour::getTour() const {
-    return tour;
+    return cities;
 }
 

@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.cpp
-City.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
-
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
 iostream
 -
@@ -17,6 +13,14 @@ utility
 -
 random
 -
+
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.cpp
+Population.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+Tour.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.cpp
 Tour.hpp
@@ -37,4 +41,6 @@ iostream
 -
 City.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
+Tour.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 
