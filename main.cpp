@@ -1,9 +1,10 @@
 #include <iostream>
 
-#include "city.hpp"
+#include "City.hpp"
 
 int main() {
-    city xx;
-    cout << xx << endl;
+    City xx;
+    City yy;
+    cout << xx << "\n" << yy << endl;
     return 0;
 }

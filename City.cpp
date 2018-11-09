@@ -1,9 +1,9 @@
 //
 // Created by danny on 2018-11-08.
 //
-#include "city.hpp"
+#include "City.hpp"
 
-city::city() {
+City::City() {
     random_device rd;
     mt19937 generator(rd());
     uniform_int_distribution<int> distrInt(min, max);
@@ -13,11 +13,11 @@ city::city() {
 }
 
 
-city::city(string name, int x, int y)
+City::City(string name, int x, int y)
     :name(std::move(name)), x(x), y(y) {}
 
 
-string city::gen_random() {
+string City::gen_random() {
     char *s;
     int len = 8;
     static const char alphanum[] =
@@ -28,11 +28,23 @@ string city::gen_random() {
     for (int i = 0; i < len; ++i) {
         s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
     }
-
     s[len] = 0;
     return s;
 }
 
-ostream &operator<<(ostream &os, const city &c) {
+ostream &operator<<(ostream &os, const City &c) {
     return os << c.name << ", " << c.x << ", " << c.y << endl;
 }
+
+double City::get_distance_between_cities(const City& city1) {
+    int distX = abs(getX() - city1.getX());
+    int distY = abs(getY() - city1.getY());
+    return sqrt(pow(distX, 2) + pow(distY, 2));
+}
+
+const string &City::getName() const { return name; }
+
+int City::getX() const { return x; }
+
+int City::getY() const { return y; }
+

@@ -9,8 +9,8 @@
 #include <random>
 using namespace std;
 
-class city {
-protected:
+class City {
+private:
     string name;
     int x;
     int y;
@@ -18,10 +18,14 @@ protected:
     constexpr static auto min = 0;
 
 public:
-    city();
-    city(string, int, int);
+    City();
+    City(string, int, int);
     string gen_random();
-    friend ostream &operator << (ostream &os, const city & c);
+    double get_distance_between_cities(const City& city1);
+    const string &getName() const;
+    int getX() const;
+    int getY() const;
+    friend ostream &operator << (ostream &os, const City & c);
 };
 
 
