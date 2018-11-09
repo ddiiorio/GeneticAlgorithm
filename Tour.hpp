@@ -11,10 +11,12 @@
 
 class Tour {
 private:
+    constexpr static int CITIES_IN_TOUR = 32;
+    constexpr static int SHUFFLES = 64;
     vector<City> tour;
     double fitness;
     int distance;
-    constexpr static int CITIES_IN_TOUR = 32;
+
 
 public:
     Tour();
@@ -24,9 +26,7 @@ public:
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
-
+    const vector<City> &getTour() const;
 };
-
-
 
 #endif //GENETICALGORITHM_TOUR_HPP

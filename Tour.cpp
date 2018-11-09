@@ -6,7 +6,11 @@
 /**
  * Default constructor, initializes fitness and distance to 0
  */
-Tour::Tour() : fitness{0}, distance{0} {}
+Tour::Tour() : fitness{0}, distance{0} {
+    for (int i = 0; i < CITIES_IN_TOUR; ++i) {
+        tour.emplace_back();
+    }
+}
 
 /**
  * Gets the city at given index in the tour
@@ -73,5 +77,9 @@ double Tour::determineFitness() {
 bool Tour::containsCity(City city1) {
     auto it = find(tour.begin(), tour.end(), city1);
     return it != tour.end();
+}
+
+const vector<City> &Tour::getTour() const {
+    return tour;
 }
 

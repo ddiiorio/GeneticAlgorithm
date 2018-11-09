@@ -14,8 +14,8 @@ private:
     string name;
     int x;
     int y;
-    constexpr static auto max = 1000;
-    constexpr static auto min = 0;
+    constexpr static auto MAP_BOUNDARY = 1000;
+    constexpr static auto MIN = 0;
 
 public:
     City();
@@ -26,7 +26,7 @@ public:
     int getX() const;
     int getY() const;
     bool operator == (const City& c) const;
-    friend ostream &operator << (ostream &os, const City & c);
+    friend ostream &operator << (ostream &os, const City &c);
 };
 
 #endif //GENETICALGORITHM_CITY_HPP

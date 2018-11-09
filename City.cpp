@@ -9,7 +9,7 @@
 City::City() {
     random_device rd;
     mt19937 generator(rd());
-    uniform_int_distribution<int> distrInt(min, max);
+    uniform_int_distribution<int> distrInt(MIN, MAP_BOUNDARY);
     x = distrInt(generator);
     y = distrInt(generator);
     name = genRandom();
