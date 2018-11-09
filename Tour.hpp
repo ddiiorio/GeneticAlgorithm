@@ -20,10 +20,10 @@ public:
     Tour();
     ~Tour() = default;
     City getCity(int);
-    void shuffle_cities();
-    int get_tour_distance(); //reports the distance between the cities as they are listed in a Tour
-    double determine_fitness(); //determines the fitness of a Tour
-    bool contains_city(City); //checks if a Tour contains a specified City
+    void shuffleCities();
+    int getTourDistance();
+    double determineFitness();
+    bool containsCity(City);
 
 };
 

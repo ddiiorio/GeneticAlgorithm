@@ -3,18 +3,33 @@
 //
 #include "Tour.hpp"
 
+/**
+ * Default constructor, initializes fitness and distance to 0
+ */
 Tour::Tour() : fitness{0}, distance{0} {}
 
+/**
+ * Gets the city at given index in the tour
+ * @param pos
+ * @return City
+ */
 City Tour::getCity(int pos) {
     return tour.at(pos);
 }
 
-void Tour::shuffle_cities() {
+/**
+ * Shuffles cities in the tour
+ */
+void Tour::shuffleCities() {
     auto rng = default_random_engine {};
     shuffle(tour.begin(), tour.end(), rng);
 }
 
-int Tour::get_tour_distance() {
+/**
+ * Calculates entire distance contained in the tour
+ * @return distance
+ */
+int Tour::getTourDistance() {
     if (distance == 0) {
         int tourDistance = 0;
         // Loop through our Tour's cities
@@ -32,22 +47,30 @@ int Tour::get_tour_distance() {
                 destinationCity = getCity(0);
             }
             // Get the distance between the two cities
-            tourDistance += fromCity.get_distance_between_cities(destinationCity);
+            tourDistance += fromCity.getDistanceBetweenCities(destinationCity);
         }
         distance = tourDistance;
     }
     return distance;
 }
 
-double Tour::determine_fitness() {
+/**
+ * Calculates fitness value of the tour
+ * @return
+ */
+double Tour::determineFitness() {
     if (fitness == 0) {
-        fitness = 1/(double) get_tour_distance();
+        fitness = 1/(double) getTourDistance();
     }
     return fitness;
 }
 
-
-bool Tour::contains_city(const City city1) {
+/**
+ * Checks if a tour contains a given city
+ * @param city1
+ * @return boolean
+ */
+bool Tour::containsCity(City city1) {
     auto it = find(tour.begin(), tour.end(), city1);
     return it != tour.end();
 }
