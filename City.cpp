@@ -48,3 +48,7 @@ int City::getX() const { return x; }
 
 int City::getY() const { return y; }
 
+bool City::operator==(const City &c) const {
+    return (name == c.name) && (x == c.x) && (y == c.y);
+}
+

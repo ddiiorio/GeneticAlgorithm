@@ -9,12 +9,12 @@
 #include <math.h>
 #include "City.hpp"
 
-
 class Tour {
-protected:
-    vector<City> cities;
+private:
+    vector<City> tour;
     double fitness;
     int distance;
+    constexpr static int CITIES_IN_TOUR = 32;
 
 public:
     Tour();

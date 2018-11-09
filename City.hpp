@@ -25,6 +25,7 @@ public:
     const string &getName() const;
     int getX() const;
     int getY() const;
+    bool operator == (const City& c) const;
     friend ostream &operator << (ostream &os, const City & c);
 };
 

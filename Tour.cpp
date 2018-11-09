@@ -6,26 +6,26 @@
 Tour::Tour() : fitness{0}, distance{0} {}
 
 City Tour::getCity(int pos) {
-    return cities.at(pos);
+    return tour.at(pos);
 }
 
 void Tour::shuffle_cities() {
     auto rng = default_random_engine {};
-    shuffle(cities.begin(), cities.end(), rng);
+    shuffle(tour.begin(), tour.end(), rng);
 }
 
 int Tour::get_tour_distance() {
     if (distance == 0) {
         int tourDistance = 0;
         // Loop through our Tour's cities
-        for (int cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
+        for (int cityIndex = 0; cityIndex < tour.size(); cityIndex++) {
             // Get City we're travelling from
             City fromCity = getCity(cityIndex);
             // City we're travelling to
             City destinationCity;
             // Check we're not on our Tour's last City, if we are set our
             // Tour's final destination City to our starting City
-            if(cityIndex + 1 < cities.size()){
+            if(cityIndex + 1 < tour.size()){
                 destinationCity = getCity(cityIndex + 1);
             }
             else{
@@ -47,9 +47,8 @@ double Tour::determine_fitness() {
 }
 
 
-
-//bool Tour::contains_city(const City city1) {
-//    auto it = find (cities.begin(), cities.end(), city1);
-//    return it != cities.end();
-//}
+bool Tour::contains_city(const City city1) {
+    auto it = find(tour.begin(), tour.end(), city1);
+    return it != tour.end();
+}
 
