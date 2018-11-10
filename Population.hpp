@@ -16,7 +16,7 @@ public:
     Population();
     Tour getTour(int);
     Tour getFittestTour();
-
+    int getBaseDistance() const;
 };
 
 

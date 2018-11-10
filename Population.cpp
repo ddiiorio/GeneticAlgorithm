@@ -4,7 +4,7 @@
 #include "Population.hpp"
 
 /**
- * Default constructor that fills
+ * Default constructor that fills tours vector with shuffled tours
  */
 Population::Population() {
     for (int i = 0; i < POPULATION_SIZE; ++i) {
@@ -16,12 +16,19 @@ Population::Population() {
     //make_heap(tours.begin(), tours.end());
 }
 
-
+/**
+ * Getter for a tour at specified index
+ * @param index
+ * @return tour
+ */
 Tour Population::getTour(int index) {
     return tours.at(index);
 }
 
-
+/**
+ * Iterates through vector of tours and returns the one with best fitness rating
+ * @return tour
+ */
 Tour Population::getFittestTour() {
     Tour fittest = tours.at(0);
     for (auto it = tours.begin() + 1; it < tours.end(); ++it) {
@@ -30,6 +37,14 @@ Tour Population::getFittestTour() {
         }
     }
     return fittest;
+}
+
+/**
+ * Getter for base distance
+ * @return base distance
+ */
+int Population::getBaseDistance() const {
+    return baseDistance;
 }
 
 
