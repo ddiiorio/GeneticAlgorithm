@@ -21,7 +21,7 @@ Population::Population() {
  * @param index
  * @return tour
  */
-Tour Population::getTour(int index) {
+inline Tour Population::getTour(int index) {
     return tours.at(index);
 }
 
@@ -43,8 +43,6 @@ Tour Population::getFittestTour() {
  * Getter for base distance
  * @return base distance
  */
-int Population::getBaseDistance() const {
+inline int Population::getBaseDistance() const {
     return baseDistance;
 }
-
-

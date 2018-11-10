@@ -14,9 +14,9 @@ private:
 
 public:
     Population();
-    Tour getTour(int);
+    inline Tour getTour(int);
     Tour getFittestTour();
-    int getBaseDistance() const;
+    inline int getBaseDistance() const;
 };
 
 

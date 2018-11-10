@@ -17,7 +17,7 @@ Tour::Tour() : fitness{0}, distance{0} {
  * @param pos
  * @return City
  */
-City Tour::getCity(int pos) {
+inline City & Tour::getCity(int pos) {
     return cities.at(pos);
 }
 
@@ -45,22 +45,19 @@ void Tour::shuffleCities() {
 int Tour::getTourDistance() {
     if (distance == 0) {
         int tourDistance = 0;
-        // Loop through our Tour's cities
         for (int cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
-            // Get City we're travelling from
-            City fromCity = getCity(cityIndex);
-            // City we're travelling to
-            City destinationCity;
+            City originCity = getCity(cityIndex);
+            City toCity;
             // Check we're not on our Tour's last City, if we are set our
             // Tour's final destination City to our starting City
             if (cityIndex + 1 < cities.size()) {
-                destinationCity = getCity(cityIndex + 1);
+                toCity = getCity(cityIndex + 1);
             }
             else {
-                destinationCity = getCity(0);
+                toCity = getCity(0);
             }
             // Get the distance between the two cities
-            tourDistance += fromCity.getDistanceBetweenCities(destinationCity);
+            tourDistance += originCity.getDistanceBetweenCities(toCity);
         }
         distance = tourDistance;
     }
@@ -69,7 +66,7 @@ int Tour::getTourDistance() {
 
 /**
  * Calculates fitness value of the tour
- * @return
+ * @return fitness value
  */
 double Tour::determineFitness() {
     if (fitness == 0) {
@@ -92,7 +89,7 @@ bool Tour::containsCity(City city1) {
  * Getter for tour vector
  * @return cities
  */
-const vector<City> &Tour::getTour() const {
+inline const vector<City> &Tour::getTour() const {
     return cities;
 }
 
@@ -108,4 +105,3 @@ ostream &operator<<(ostream &os, const Tour &t) {
     }
     return os;
 }
-

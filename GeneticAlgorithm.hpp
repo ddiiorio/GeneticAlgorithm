@@ -5,16 +5,17 @@
 #define GENETICALGORITHM_GENETICALGORITHM_HPP
 
 #include "Population.hpp"
+#include "RandomGenerator.hpp"
 
 class GeneticAlgorithm {
 private:
     constexpr static double MUTATION_RATE = 0.15;
     constexpr static int CITIES_IN_TOUR = 32;
-
+    RandomGenerator random;
 
 public:
-    GeneticAlgorithm();
-
+    GeneticAlgorithm() = default;
+    Tour crossover(Tour&, Tour&);
     void mutate(Tour &t) const;
 };
 

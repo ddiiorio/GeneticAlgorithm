@@ -22,9 +22,9 @@ public:
     City(string, int, int);
     string genRandom();
     double getDistanceBetweenCities(const City&);
-    const string &getName() const;
-    int getX() const;
-    int getY() const;
+    inline const string &getName() const;
+    inline int getX() const;
+    inline int getY() const;
     bool operator == (const City&) const;
     friend ostream &operator << (ostream&, const City&);
 };

@@ -98,6 +98,12 @@
 		<Unit filename="/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp">
 			<Option target="GeneticAlgorithm"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomGenerator.cpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomGenerator.hpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.cpp">
 			<Option target="GeneticAlgorithm"/>
 		</Unit>

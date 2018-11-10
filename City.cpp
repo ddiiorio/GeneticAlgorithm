@@ -68,19 +68,19 @@ double City::getDistanceBetweenCities(const City &city1) {
  * Getter for city name
  * @return name
  */
-const string &City::getName() const { return name; }
+inline const string &City::getName() const { return name; }
 
 /**
  * Getter for x value
  * @return x
  */
-int City::getX() const { return x; }
+inline int City::getX() const { return x; }
 
 /**
  * Getter for y value
  * @return y
  */
-int City::getY() const { return y; }
+inline int City::getY() const { return y; }
 
 /**
  * Overloaded equals operator
