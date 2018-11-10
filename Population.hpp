@@ -10,9 +10,11 @@ class Population {
 private:
     constexpr static int POPULATION_SIZE = 32;
     vector<Tour> tours;
+    int baseDistance;
 
 public:
     Population();
+    Tour getTour(int);
     Tour getFittestTour();
 
 };

@@ -1,15 +1,16 @@
-#include <iostream>
 #include "City.hpp"
 #include "Tour.hpp"
+#include "Population.hpp"
 
 int main() {
-    City xx;
-    City yy;
     Tour zz;
-    //cout << xx << "\n" << yy << endl;
+    Population aa;
 //    for (City t : zz.getTour()) {
 //        cout << t;
 //    }
 //
+    cout << zz.getTourDistance() << endl;
+    cout << aa.getFittestTour().determineFitness();
+
     return 0;
 }

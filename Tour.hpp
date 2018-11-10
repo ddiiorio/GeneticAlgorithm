@@ -17,16 +17,17 @@ private:
     double fitness;
     int distance;
 
-
 public:
     Tour();
     ~Tour() = default;
     City getCity(int);
+    void setCity(int, City&);
     void shuffleCities();
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
     const vector<City> &getTour() const;
+    friend ostream &operator << (ostream&, const Tour&);
 };
 
 #endif //GENETICALGORITHM_TOUR_HPP

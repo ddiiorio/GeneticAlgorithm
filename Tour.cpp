@@ -21,12 +21,21 @@ City Tour::getCity(int pos) {
     return cities.at(pos);
 }
 
+
+void Tour::setCity(int position, City& city) {
+    cities.at(position) = city;
+    fitness = 0;
+    distance = 0;
+}
+
 /**
  * Shuffles cities in the tour
  */
 void Tour::shuffleCities() {
-    auto rng = default_random_engine {};
-    shuffle(cities.begin(), cities.end(), rng);
+    for (int i = 0; i < SHUFFLES; ++i) {
+        auto rng = default_random_engine {};
+        shuffle(cities.begin(), cities.end(), rng);
+    }
 }
 
 /**
@@ -44,10 +53,10 @@ int Tour::getTourDistance() {
             City destinationCity;
             // Check we're not on our Tour's last City, if we are set our
             // Tour's final destination City to our starting City
-            if(cityIndex + 1 < cities.size()){
+            if (cityIndex + 1 < cities.size()) {
                 destinationCity = getCity(cityIndex + 1);
             }
-            else{
+            else {
                 destinationCity = getCity(0);
             }
             // Get the distance between the two cities
@@ -64,7 +73,7 @@ int Tour::getTourDistance() {
  */
 double Tour::determineFitness() {
     if (fitness == 0) {
-        fitness = 1/(double) getTourDistance();
+        fitness = (1/(double) getTourDistance()) * 1000000;
     }
     return fitness;
 }
@@ -79,7 +88,24 @@ bool Tour::containsCity(City city1) {
     return it != cities.end();
 }
 
+/**
+ * Getter for tour vector
+ * @return cities
+ */
 const vector<City> &Tour::getTour() const {
     return cities;
+}
+
+/**
+ * Overloaded insertion operator
+ * @param os
+ * @param t
+ * @return output
+ */
+ostream &operator<<(ostream &os, const Tour &t) {
+    for (const City &c : t.getTour()) {
+        os << c;
+    }
+    return os;
 }
 

@@ -21,12 +21,12 @@ public:
     City();
     City(string, int, int);
     string genRandom();
-    double getDistanceBetweenCities(const City &city1);
+    double getDistanceBetweenCities(const City&);
     const string &getName() const;
     int getX() const;
     int getY() const;
-    bool operator == (const City& c) const;
-    friend ostream &operator << (ostream &os, const City &c);
+    bool operator == (const City&) const;
+    friend ostream &operator << (ostream&, const City&);
 };
 
 #endif //GENETICALGORITHM_CITY_HPP

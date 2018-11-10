@@ -50,7 +50,7 @@ string City::genRandom() {
  * @return output
  */
 ostream &operator<<(ostream &os, const City &c) {
-    return os << c.name << ", " << c.x << ", " << c.y << endl;
+    return os << c.name << ", <" << c.x << ", " << c.y << ">" << endl;
 }
 
 /**

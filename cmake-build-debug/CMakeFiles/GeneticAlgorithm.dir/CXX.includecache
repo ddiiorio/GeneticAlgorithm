@@ -14,15 +14,15 @@ utility
 random
 -
 
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.cpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.cpp
+GeneticAlgorithm.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
+
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
 Population.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
-Tour.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.cpp
 Tour.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 
@@ -35,12 +35,4 @@ math.h
 -
 City.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/main.cpp
-iostream
--
-City.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
-Tour.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 
