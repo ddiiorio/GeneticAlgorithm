@@ -13,7 +13,18 @@ Population::Population() {
         tours.push_back(newTour);
     }
     baseDistance = getFittestTour().getTourDistance();
-    //make_heap(tours.begin(), tours.end());
+}
+
+/**
+ * Constructor creating a population of a specified size
+ * @param size number of tours in population
+ */
+Population::Population(int size) {
+    for (int i = 0; i < size; ++i) {
+        Tour newTour;
+        newTour.shuffleCities();
+        tours.push_back(newTour);
+    }
 }
 
 /**
@@ -21,8 +32,17 @@ Population::Population() {
  * @param index
  * @return tour
  */
-inline Tour Population::getTour(int index) {
-    return tours.at(index);
+inline Tour& Population::getTour(int index) {
+    return tours.at(static_cast<unsigned long>(index));
+}
+
+/**
+ * Insert a tour into specified index in a population
+ * @param index position to insert tour
+ * @param t new tour being inserted
+ */
+void Population::insertTour(int index, Tour& t) {
+    tours.at(static_cast<unsigned long>(index)) = t;
 }
 
 /**
@@ -50,3 +70,7 @@ inline int Population::getBaseDistance() const {
 const vector<Tour> &Population::getTours() const {
     return tours;
 }
+
+
+
+

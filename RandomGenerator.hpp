@@ -14,12 +14,12 @@ using std::uniform_real_distribution;
 
 class RandomGenerator {
 public:
-    RandomGenerator();
-    template<typename T> T getIntegerInRange(T, T);
-    template<typename T> T getRealInRange(T, T);
+    RandomGenerator() = default;
+    template<typename T> static T getIntegerInRange(T, T);
+    template<typename T> static T getRealInRange(T, T);
 
 private:
-    mt19937 _rng;
+    static mt19937 _rng;
 };
 
 #endif //GENETICALGORITHM_RANDOMGENERATOR_HPP

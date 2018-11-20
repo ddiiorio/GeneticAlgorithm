@@ -4,6 +4,18 @@
 
 #include "GeneticAlgorithm.hpp"
 
+Population GeneticAlgorithm::evolve(Population &) {
+
+
+
+
+
+
+
+    return Population();
+}
+
+
 void GeneticAlgorithm::selection(Population& p) const {
     const Tour fittest = p.getFittestTour();
     for (auto it = p.getTours().begin(); it != p.getTours().end(); ++it) {
@@ -16,7 +28,6 @@ void GeneticAlgorithm::selection(Population& p) const {
 
 Tour GeneticAlgorithm::crossover(Tour& t1, Tour& t2) {
     Tour child;
-    const vector<City> &childCities = child.getTour();
     const vector<City> &parent1 = t1.getTour();
     const vector<City> &parent2 = t2.getTour();
 
@@ -67,5 +78,22 @@ void GeneticAlgorithm::mutate(Tour &t) const {
         }
     }
 }
+
+/**
+ * Creates a subset of tours from the population and returns the fittest of
+ * this subset
+ * @param p Population for selection
+ * @return fittest tour from the population subset
+ */
+Tour GeneticAlgorithm::crossoverSelection(Population& p) const {
+    Population pp(PARENT_POOL_SIZE);
+    for (int i = 0; i < PARENT_POOL_SIZE; ++i) {
+        int randomNum = RandomGenerator::getIntegerInRange(0, (int) p.getTours().size());
+        pp.insertTour(randomNum, p.getTour(randomNum));
+    }
+    return pp.getFittestTour();
+}
+
+
 
 

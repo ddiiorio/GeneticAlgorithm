@@ -69,7 +69,7 @@ int Tour::getTourDistance() {
                 toCity = getCity(0);
             }
             // Get the distance between the two cities
-            tourDistance += originCity.getDistanceBetweenCities(toCity);
+            tourDistance += (int) originCity.getDistanceBetweenCities(toCity);
         }
         distance = tourDistance;
     }

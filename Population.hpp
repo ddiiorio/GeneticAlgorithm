@@ -14,8 +14,10 @@ private:
 
 public:
     Population();
+    Population(int);
     const vector<Tour> &getTours() const;
-    inline Tour getTour(int);
+    inline Tour& getTour(int);
+    void insertTour(int, Tour&);
     Tour getFittestTour();
     inline int getBaseDistance() const;
 };
