@@ -71,6 +71,10 @@ vector<Tour> &Population::getTours() {
     return tours;
 }
 
+const int Population::getSize() {
+    return POPULATION_SIZE;
+}
+
 
 
 

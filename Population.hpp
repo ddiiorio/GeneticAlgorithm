@@ -15,6 +15,7 @@ private:
 public:
     Population();
     explicit Population(int);
+    static const int getSize();
     vector<Tour> &getTours();
     const Tour & getTour(int) const;
     void insertTour(int, const Tour &);

@@ -14,6 +14,7 @@ private:
     constexpr static int CITIES_IN_TOUR = 32;
     constexpr static int NUMBER_OF_PARENTS = 2;
     constexpr static int PARENT_POOL_SIZE = 5;
+    constexpr static int NUMBER_OF_ELITES = 1;
     RandomNumGenerator* random;
 
 public:

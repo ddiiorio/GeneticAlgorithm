@@ -4,15 +4,20 @@
 
 #include "GeneticAlgorithm.hpp"
 
-Population GeneticAlgorithm::evolve(Population &) {
+Population GeneticAlgorithm::evolve(Population & p) {
+    Population newPop;
+    for (int i = NUMBER_OF_ELITES; i < Population::getSize(); i++) {
+        Tour parent1 = crossoverSelection(p);
+        Tour parent2 = crossoverSelection(p);
+        Tour child = crossover(parent1, parent2);
+        newPop.insertTour(i, child);
+    }
 
+    for (int i = NUMBER_OF_ELITES; i < Population::getSize(); i++) {
+        mutate(const_cast<Tour &>(newPop.getTour(i)));
+    }
 
-
-
-
-
-
-    return Population();
+    return newPop;
 }
 
 
@@ -85,9 +90,11 @@ void GeneticAlgorithm::mutate(Tour &t) const {
 Tour GeneticAlgorithm::crossoverSelection(Population& p) {
     Population pp(PARENT_POOL_SIZE);
     for (int i = 0; i < PARENT_POOL_SIZE; ++i) {
-        auto randomNum = random->getIntegerInRange<int>
-                (0, (int) p.getTours().size());
+        //auto randomNum = random->getIntegerInRange<int>
+        //        (0, (int) p.getTours().size());
+        auto randomNum = 10;
         pp.insertTour(randomNum, p.getTour(randomNum));
+        randomNum +=2;
     }
     return pp.getFittestTour();
 }

@@ -1,16 +1,17 @@
-#include "City.hpp"
-#include "Tour.hpp"
 #include "Population.hpp"
+#include "GeneticAlgorithm.hpp"
 
 int main() {
-    Tour zz;
+    GeneticAlgorithm zz{};
     Population aa;
-//    for (City t : zz.getTour()) {
-//        cout << t;
-//    }
-//
-    cout << zz.getTourDistance() << endl;
-    cout << aa.getFittestTour().determineFitness();
+
+    cout << aa.getFittestTour().determineFitness() << endl;
+
+    for (int i = 0; i < 1; ++i) {
+        aa = zz.evolve(aa);
+    }
+
+    cout << aa.getFittestTour().determineFitness() << endl;
 
     return 0;
 }

@@ -24,7 +24,7 @@ private:
 
 template<typename T> T
 RandomNumGenerator::getIntegerInRange(T minInclusive, T maxInclusive) {
-    uniform_int_distribution<T> distribution(minInclusive, maxInclusive);
+    uniform_int_distribution<int> distribution(minInclusive, maxInclusive);
     return distribution(_rng);
 }
 
