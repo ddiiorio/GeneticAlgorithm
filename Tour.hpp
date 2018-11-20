@@ -27,9 +27,9 @@ public:
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
-    inline const vector<City> &getTour() const;
-    friend ostream &operator << (ostream&, const Tour&);
-    bool operator == (const Tour&) const;
+    inline vector<City> &getTour();
+    friend ostream &operator << (ostream&, Tour&);
+    bool operator == (Tour&);
 };
 
 #endif //GENETICALGORITHM_TOUR_HPP

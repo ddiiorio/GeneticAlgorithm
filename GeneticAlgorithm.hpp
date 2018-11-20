@@ -5,7 +5,7 @@
 #define GENETICALGORITHM_GENETICALGORITHM_HPP
 
 #include "Population.hpp"
-#include "RandomGenerator.hpp"
+#include "RandomNumGenerator.hpp"
 #include <algorithm>
 
 class GeneticAlgorithm {
@@ -14,7 +14,7 @@ private:
     constexpr static int CITIES_IN_TOUR = 32;
     constexpr static int NUMBER_OF_PARENTS = 2;
     constexpr static int PARENT_POOL_SIZE = 5;
-    RandomGenerator random;
+    RandomNumGenerator* random;
 
 public:
     GeneticAlgorithm() = default;
@@ -22,7 +22,7 @@ public:
     void selection(Population&) const;
     Tour crossover(Tour&, Tour&);
     void mutate(Tour &t) const;
-    Tour crossoverSelection(Population&) const;
+    Tour crossoverSelection(Population&);
 };
 
 #endif //GENETICALGORITHM_GENETICALGORITHM_HPP

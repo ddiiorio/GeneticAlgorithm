@@ -32,7 +32,7 @@ Population::Population(int size) {
  * @param index
  * @return tour
  */
-inline Tour& Population::getTour(int index) {
+const Tour & Population::getTour(int index) const {
     return tours.at(static_cast<unsigned long>(index));
 }
 
@@ -41,7 +41,7 @@ inline Tour& Population::getTour(int index) {
  * @param index position to insert tour
  * @param t new tour being inserted
  */
-void Population::insertTour(int index, Tour& t) {
+void Population::insertTour(int index, const Tour &t) {
     tours.at(static_cast<unsigned long>(index)) = t;
 }
 
@@ -63,11 +63,11 @@ Tour Population::getFittestTour() {
  * Getter for base distance
  * @return base distance
  */
-inline int Population::getBaseDistance() const {
+inline int Population::getBaseDistance() {
     return baseDistance;
 }
 
-const vector<Tour> &Population::getTours() const {
+vector<Tour> &Population::getTours() {
     return tours;
 }
 

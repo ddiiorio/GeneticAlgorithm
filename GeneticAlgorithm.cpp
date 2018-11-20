@@ -17,7 +17,7 @@ Population GeneticAlgorithm::evolve(Population &) {
 
 
 void GeneticAlgorithm::selection(Population& p) const {
-    const Tour fittest = p.getFittestTour();
+    Tour fittest = p.getFittestTour();
     for (auto it = p.getTours().begin(); it != p.getTours().end(); ++it) {
         if (*it == fittest) {
             std::rotate(p.getTours().begin(), it, p.getTours().end());
@@ -31,9 +31,9 @@ Tour GeneticAlgorithm::crossover(Tour& t1, Tour& t2) {
     const vector<City> &parent1 = t1.getTour();
     const vector<City> &parent2 = t2.getTour();
 
-    // Get start and end sub tour positions for parent1's tour
-    int startPos = random.getIntegerInRange(0, (int) parent1.size());
-    int endPos = random.getIntegerInRange(0, (int) parent1.size());
+    // Get random start and end sub tour positions for parent1's tour
+    auto startPos = random->getIntegerInRange<int>(0, (int) parent1.size());
+    auto endPos = random->getIntegerInRange<int>(0, (int) parent1.size());
 
     // Loop and add the sub tour from parent1 to our child
     for (int i = 0; i < parent1.size(); ++i) {
@@ -60,13 +60,10 @@ Tour GeneticAlgorithm::crossover(Tour& t1, Tour& t2) {
 
 void GeneticAlgorithm::mutate(Tour &t) const {
     for (int tourPosition1 = 0; tourPosition1 < t.getTour().size(); ++tourPosition1){
-        random_device rd;
-        mt19937 generator(rd());
-        uniform_int_distribution<int> distrInt(0, CITIES_IN_TOUR);
-        uniform_real_distribution<double> distrDbl(0, 1);
-        double randDbl = distrDbl(generator);
+        auto randDbl = random->getRealInRange<double>(0, 1);
         if (randDbl < MUTATION_RATE) {
-            int tourPosition2 = distrInt(generator);
+            auto tourPosition2 = random->getIntegerInRange<int>
+                    (0, CITIES_IN_TOUR);
 
             // get cities
             City city1 = t.getCity(tourPosition1);
@@ -85,10 +82,11 @@ void GeneticAlgorithm::mutate(Tour &t) const {
  * @param p Population for selection
  * @return fittest tour from the population subset
  */
-Tour GeneticAlgorithm::crossoverSelection(Population& p) const {
+Tour GeneticAlgorithm::crossoverSelection(Population& p) {
     Population pp(PARENT_POOL_SIZE);
     for (int i = 0; i < PARENT_POOL_SIZE; ++i) {
-        int randomNum = RandomGenerator::getIntegerInRange(0, (int) p.getTours().size());
+        auto randomNum = random->getIntegerInRange<int>
+                (0, (int) p.getTours().size());
         pp.insertTour(randomNum, p.getTour(randomNum));
     }
     return pp.getFittestTour();

@@ -14,12 +14,12 @@ private:
 
 public:
     Population();
-    Population(int);
-    const vector<Tour> &getTours() const;
-    inline Tour& getTour(int);
-    void insertTour(int, Tour&);
+    explicit Population(int);
+    vector<Tour> &getTours();
+    const Tour & getTour(int) const;
+    void insertTour(int, const Tour &);
     Tour getFittestTour();
-    inline int getBaseDistance() const;
+    inline int getBaseDistance();
 };
 
 

@@ -101,7 +101,7 @@ bool Tour::containsCity(City city1) {
  * Getter for tour vector
  * @return cities
  */
-inline const vector<City> &Tour::getTour() const {
+inline vector<City> &Tour::getTour() {
     return cities;
 }
 
@@ -111,13 +111,13 @@ inline const vector<City> &Tour::getTour() const {
  * @param t
  * @return output
  */
-ostream &operator<<(ostream &os, const Tour &t) {
-    for (const City &c : t.getTour()) {
+ostream &operator<<(ostream &os, Tour &t) {
+    for (City &c : t.getTour()) {
         os << c;
     }
     return os;
 }
 
-bool Tour::operator==(const Tour &t) const {
+bool Tour::operator==(Tour &t) {
     return (cities == t.getTour());
 }

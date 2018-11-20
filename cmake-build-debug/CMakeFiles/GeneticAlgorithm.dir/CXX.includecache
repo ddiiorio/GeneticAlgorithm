@@ -21,10 +21,22 @@ GeneticAlgorithm.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
 Population.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+RandomNumGenerator.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
+algorithm
+-
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 Tour.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
+
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
+iostream
+-
+string
+-
+random
+-
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 vector
