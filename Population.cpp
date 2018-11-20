@@ -46,3 +46,7 @@ Tour Population::getFittestTour() {
 inline int Population::getBaseDistance() const {
     return baseDistance;
 }
+
+const vector<Tour> &Population::getTours() const {
+    return tours;
+}

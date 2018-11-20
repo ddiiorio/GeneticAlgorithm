@@ -22,12 +22,14 @@ public:
     ~Tour() = default;
     inline City & getCity(int);
     void setCity(int, City&);
+    void insertCity(City& city);
     void shuffleCities();
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
     inline const vector<City> &getTour() const;
     friend ostream &operator << (ostream&, const Tour&);
+    bool operator == (const Tour&) const;
 };
 
 #endif //GENETICALGORITHM_TOUR_HPP

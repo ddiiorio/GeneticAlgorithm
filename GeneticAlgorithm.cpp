@@ -4,6 +4,16 @@
 
 #include "GeneticAlgorithm.hpp"
 
+void GeneticAlgorithm::selection(Population& p) const {
+    const Tour fittest = p.getFittestTour();
+    for (auto it = p.getTours().begin(); it != p.getTours().end(); ++it) {
+        if (*it == fittest) {
+            std::rotate(p.getTours().begin(), it, p.getTours().end());
+            break;
+        }
+    }
+}
+
 Tour GeneticAlgorithm::crossover(Tour& t1, Tour& t2) {
     Tour child;
     const vector<City> &childCities = child.getTour();
@@ -27,18 +37,10 @@ Tour GeneticAlgorithm::crossover(Tour& t1, Tour& t2) {
         }
     }
 
-    // Loop through parent2's city tour
+    // Loop through parent2's tour and add city if it doesn't already exist
     for (int i = 0; i < parent2.size(); i++) {
-        // If child doesn't have the city add it
         if (!child.containsCity(t2.getCity(i))) {
-            // Loop to find a spare position in the child's tour
-            for (int ii = 0; ii < childCities.size(); ii++) {
-                // Spare position found, add city
-                if (child.getCity(ii) == null) {
-                    child.setCity(ii, t2.getCity(i));
-                    break;
-                }
-            }
+            child.insertCity(t2.getCity(i));
         }
     }
     return child;
@@ -65,3 +67,5 @@ void GeneticAlgorithm::mutate(Tour &t) const {
         }
     }
 }
+
+

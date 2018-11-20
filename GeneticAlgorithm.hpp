@@ -6,6 +6,7 @@
 
 #include "Population.hpp"
 #include "RandomGenerator.hpp"
+#include <algorithm>
 
 class GeneticAlgorithm {
 private:
@@ -15,6 +16,7 @@ private:
 
 public:
     GeneticAlgorithm() = default;
+    void selection(Population&) const;
     Tour crossover(Tour&, Tour&);
     void mutate(Tour &t) const;
 };

@@ -21,11 +21,23 @@ inline City & Tour::getCity(int pos) {
     return cities.at(pos);
 }
 
-
+/**
+ * Inserts a city at a specified position in a tour
+ * @param position
+ * @param city
+ */
 void Tour::setCity(int position, City& city) {
     cities.at(position) = city;
     fitness = 0;
     distance = 0;
+}
+
+/**
+ * Simple insert for a city into tour
+ * @param city
+ */
+void Tour::insertCity(City& city) {
+    cities.push_back(city);
 }
 
 /**
@@ -104,4 +116,8 @@ ostream &operator<<(ostream &os, const Tour &t) {
         os << c;
     }
     return os;
+}
+
+bool Tour::operator==(const Tour &t) const {
+    return (cities == t.getTour());
 }
