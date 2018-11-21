@@ -17,25 +17,16 @@ Population::Population() {
 
 /**
  * Getter for a tour at specified index
- * @param index
- * @return tour
+ * @param index tour index in population
+ * @return tour at index
  */
 Tour & Population::getTour(int index) {
     return tours.at(static_cast<unsigned long>(index));
 }
 
 /**
- * Insert a tour into specified index in a population
- * @param index position to insert tour
- * @param t new tour being inserted
- */
-void Population::insertTour(int index, const Tour &t) {
-    tours.at(static_cast<unsigned long>(index)) = t;
-}
-
-/**
  * Iterates through vector of tours and returns the one with best fitness rating
- * @return tour
+ * @return fittest tour
  */
 Tour Population::getFittestTour() {
     Tour fittest = tours.at(0);
@@ -55,14 +46,26 @@ inline int Population::getBaseDistance() {
     return baseDistance;
 }
 
+/**
+ * Getter for populations vector of tours
+ * @return tours vector
+ */
 vector<Tour> &Population::getTours() {
     return tours;
 }
 
+/**
+ * Getter for const value for the population's size
+ * @return population size
+ */
 const int Population::getSize() {
     return POPULATION_SIZE;
 }
 
+/**
+ * Setter for the populations vector of tours
+ * @param tours vector of tours
+ */
 void Population::setTours(const vector<Tour> &tours) {
     Population::tours = tours;
 }

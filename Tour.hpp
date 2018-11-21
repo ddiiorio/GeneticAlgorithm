@@ -22,7 +22,6 @@ public:
     ~Tour() = default;
     inline City & getCity(int);
     void setCity(int, City&);
-    void insertCity(City& city);
     void shuffleCities();
     int getTourDistance();
     double determineFitness();

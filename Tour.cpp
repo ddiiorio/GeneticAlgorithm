@@ -4,7 +4,10 @@
 #include "Tour.hpp"
 
 /**
- * Default constructor, initializes fitness and distance to 0
+ * Default constructor, initializes fitness and distance to 0, and fills
+ * vector of cities if it is not constructed as a child.
+ * If it is constructed as a child, it is initialized with an empty vector
+ * @param child boolean determining if tour is a child or not
  */
 Tour::Tour(bool child) : fitness{0}, distance{0} {
     if (!child) {
@@ -18,30 +21,22 @@ Tour::Tour(bool child) : fitness{0}, distance{0} {
 
 /**
  * Gets the city at given index in the tour
- * @param pos
- * @return City
+ * @param position index position
+ * @return City at index
  */
-inline City & Tour::getCity(int pos) {
-    return cities.at(pos);
+inline City & Tour::getCity(int position) {
+    return cities.at(position);
 }
 
 /**
  * Inserts a city at a specified position in a tour
- * @param position
- * @param city
+ * @param position index position
+ * @param city city at index
  */
 void Tour::setCity(int position, City& city) {
     cities.at(position) = city;
     fitness = 0;
     distance = 0;
-}
-
-/**
- * Simple insert for a city into tour
- * @param city
- */
-void Tour::insertCity(City& city) {
-    cities.push_back(city);
 }
 
 /**
@@ -52,8 +47,8 @@ void Tour::shuffleCities() {
 }
 
 /**
- * Calculates entire distance contained in the tour
- * @return distance
+ * Calculates entire distance of the tour based on city order
+ * @return total tour distance
  */
 int Tour::getTourDistance() {
     if (distance == 0) {
@@ -61,8 +56,8 @@ int Tour::getTourDistance() {
         for (int cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
             City originCity = getCity(cityIndex);
             City toCity;
-            // Check we're not on our Tour's last City, if we are set our
-            // Tour's final destination City to our starting City
+            // Check we're not on our tour's last city, if we are set our
+            // tour's final destination city to our starting city
             if (cityIndex + 1 < cities.size()) {
                 toCity = getCity(cityIndex + 1);
             }
@@ -78,7 +73,8 @@ int Tour::getTourDistance() {
 }
 
 /**
- * Calculates fitness value of the tour
+ * Calculates fitness of the tour, multiplied by a scalar (1 million)
+ * for a more readable value
  * @return fitness value
  */
 double Tour::determineFitness() {
@@ -90,8 +86,8 @@ double Tour::determineFitness() {
 
 /**
  * Checks if a tour contains a given city
- * @param city1
- * @return boolean
+ * @param city1 city being searched for
+ * @return boolean true if tour contains city
  */
 bool Tour::containsCity(City city1) {
     auto it = find(cities.begin(), cities.end(), city1);
@@ -100,7 +96,7 @@ bool Tour::containsCity(City city1) {
 
 /**
  * Getter for tour vector
- * @return cities
+ * @return cities vector
  */
 inline vector<City> &Tour::getTour() {
     return cities;
@@ -108,9 +104,9 @@ inline vector<City> &Tour::getTour() {
 
 /**
  * Overloaded insertion operator
- * @param os
- * @param t
- * @return output
+ * @param os output stream
+ * @param t tour being output
+ * @return output to console
  */
 ostream &operator<<(ostream &os, Tour &t) {
     for (City &c : t.getTour()) {
@@ -119,10 +115,20 @@ ostream &operator<<(ostream &os, Tour &t) {
     return os;
 }
 
+/**
+ * Overloaded equals operator to determine if tours are equal
+ * @param t tour being compared
+ * @return true if tours are equal
+ */
 bool Tour::operator==(Tour &t) {
     return (fitness == t.fitness);
 }
 
+/**
+ * Overloaded comparison operator used in sorting tours
+ * @param t tour being compared
+ * @return true or false
+ */
 bool Tour::operator<(const Tour &t) const {
     return fitness > t.fitness;
 }
