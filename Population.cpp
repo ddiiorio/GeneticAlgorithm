@@ -63,6 +63,10 @@ const int Population::getSize() {
     return POPULATION_SIZE;
 }
 
+void Population::setTours(const vector<Tour> &tours) {
+    Population::tours = tours;
+}
+
 
 
 

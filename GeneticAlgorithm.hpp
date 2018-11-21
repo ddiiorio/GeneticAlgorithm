@@ -21,7 +21,7 @@ public:
     GeneticAlgorithm() = default;
     Population evolve(Population&);
     void selection(Population&) const;
-    Tour crossover(Tour&, Tour&);
+    Tour crossover(Tour, Tour);
     void mutate(Tour &t) ;
     vector<Tour> crossoverSelection(Population&);
 };
