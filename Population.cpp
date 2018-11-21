@@ -8,7 +8,7 @@
  */
 Population::Population() {
     for (int i = 0; i < POPULATION_SIZE; ++i) {
-        Tour newTour;
+        Tour newTour(false);
         newTour.shuffleCities();
         tours.push_back(newTour);
     }
@@ -16,23 +16,11 @@ Population::Population() {
 }
 
 /**
- * Constructor creating a population of a specified size
- * @param size number of tours in population
- */
-Population::Population(int size) {
-    for (int i = 0; i < size; ++i) {
-        Tour newTour;
-        newTour.shuffleCities();
-        tours.push_back(newTour);
-    }
-}
-
-/**
  * Getter for a tour at specified index
  * @param index
  * @return tour
  */
-const Tour & Population::getTour(int index) const {
+Tour & Population::getTour(int index) {
     return tours.at(static_cast<unsigned long>(index));
 }
 

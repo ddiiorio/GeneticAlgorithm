@@ -16,6 +16,9 @@ CMakeFiles/GeneticAlgorithm.dir/Population.cpp.o: ../Population.cpp
 CMakeFiles/GeneticAlgorithm.dir/Population.cpp.o: ../Population.hpp
 CMakeFiles/GeneticAlgorithm.dir/Population.cpp.o: ../Tour.hpp
 
+CMakeFiles/GeneticAlgorithm.dir/RandomNumGenerator.cpp.o: ../RandomNumGenerator.cpp
+CMakeFiles/GeneticAlgorithm.dir/RandomNumGenerator.cpp.o: ../RandomNumGenerator.hpp
+
 CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.o: ../City.hpp
 CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.o: ../Tour.cpp
 CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.o: ../Tour.hpp

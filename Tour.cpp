@@ -6,9 +6,13 @@
 /**
  * Default constructor, initializes fitness and distance to 0
  */
-Tour::Tour() : fitness{0}, distance{0} {
-    for (int i = 0; i < CITIES_IN_TOUR; ++i) {
-        cities.emplace_back();
+Tour::Tour(bool child) : fitness{0}, distance{0} {
+    if (!child) {
+        for (int i = 0; i < CITIES_IN_TOUR; ++i) {
+            cities.emplace_back();
+        }
+        determineFitness();
+        getTourDistance();
     }
 }
 
@@ -44,10 +48,7 @@ void Tour::insertCity(City& city) {
  * Shuffles cities in the tour
  */
 void Tour::shuffleCities() {
-    for (int i = 0; i < SHUFFLES; ++i) {
-        auto rng = default_random_engine {};
-        shuffle(cities.begin(), cities.end(), rng);
-    }
+    random_shuffle(cities.begin(), cities.end());
 }
 
 /**
@@ -119,5 +120,9 @@ ostream &operator<<(ostream &os, Tour &t) {
 }
 
 bool Tour::operator==(Tour &t) {
-    return (cities == t.getTour());
+    return (fitness == t.fitness);
+}
+
+bool Tour::operator<(const Tour &t) const {
+    return fitness > t.fitness;
 }

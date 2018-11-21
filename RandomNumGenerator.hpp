@@ -8,31 +8,16 @@
 #include <string>
 #include <random>
 
-using std::mt19937;
-using std::uniform_int_distribution;
-using std::uniform_real_distribution;
+using namespace std;
 
 class RandomNumGenerator {
 public:
-    RandomNumGenerator() = default;
-    template<typename T> T getIntegerInRange(T minInclusive, T maxInclusive);
-    template<typename T> T getRealInRange(T minInclusive, T maxInclusive);
+    RandomNumGenerator();
+    int getIntegerInRange(int, int);
+    double getRealInRange(double, double);
+    random_device rd;
+    mt19937 generator;
 
-private:
-    mt19937 _rng;
 };
-
-template<typename T> T
-RandomNumGenerator::getIntegerInRange(T minInclusive, T maxInclusive) {
-    uniform_int_distribution<int> distribution(minInclusive, maxInclusive);
-    return distribution(_rng);
-}
-
-
-template<typename T> T
-RandomNumGenerator::getRealInRange(T minInclusive, T maxInclusive) {
-    uniform_real_distribution<T> distribution(minInclusive, maxInclusive);
-    return distribution(_rng);
-}
 
 #endif //GENETICALGORITHM_RANDOMNUMGENERATOR_HPP

@@ -15,15 +15,15 @@ private:
     constexpr static int NUMBER_OF_PARENTS = 2;
     constexpr static int PARENT_POOL_SIZE = 5;
     constexpr static int NUMBER_OF_ELITES = 1;
-    RandomNumGenerator* random;
+    RandomNumGenerator random;
 
 public:
     GeneticAlgorithm() = default;
     Population evolve(Population&);
     void selection(Population&) const;
     Tour crossover(Tour&, Tour&);
-    void mutate(Tour &t) const;
-    Tour crossoverSelection(Population&);
+    void mutate(Tour &t) ;
+    vector<Tour> crossoverSelection(Population&);
 };
 
 #endif //GENETICALGORITHM_GENETICALGORITHM_HPP

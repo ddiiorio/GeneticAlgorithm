@@ -18,7 +18,7 @@ private:
     int distance;
 
 public:
-    Tour();
+    Tour(bool);
     ~Tour() = default;
     inline City & getCity(int);
     void setCity(int, City&);
@@ -30,6 +30,7 @@ public:
     inline vector<City> &getTour();
     friend ostream &operator << (ostream&, Tour&);
     bool operator == (Tour&);
+    bool operator<(const Tour &other) const;
 };
 
 #endif //GENETICALGORITHM_TOUR_HPP

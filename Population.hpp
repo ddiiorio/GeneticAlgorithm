@@ -17,7 +17,7 @@ public:
     explicit Population(int);
     static const int getSize();
     vector<Tour> &getTours();
-    const Tour & getTour(int) const;
+    Tour & getTour(int);
     void insertTour(int, const Tour &);
     Tour getFittestTour();
     inline int getBaseDistance();
