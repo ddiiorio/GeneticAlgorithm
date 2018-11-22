@@ -15,12 +15,12 @@ private:
     constexpr static int NUMBER_OF_PARENTS = 2;
     constexpr static int PARENT_POOL_SIZE = 5;
     constexpr static int NUMBER_OF_ELITES = 1;
-    constexpr static int ITERATIONS = 1000;
+    constexpr static int ITERATIONS = 200;
     RandomNumGenerator random;
 
 public:
     GeneticAlgorithm() = default;
-    static const int getIterations();
+    static int getIterations();
     Population evolve(Population&);
     void selection(Population&) const;
     Tour crossover(Tour, Tour);

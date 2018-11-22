@@ -58,7 +58,7 @@ vector<Tour> &Population::getTours() {
  * Getter for const value for the population's size
  * @return population size
  */
-const int Population::getSize() {
+int Population::getSize() {
     return POPULATION_SIZE;
 }
 

@@ -16,17 +16,8 @@ City::City() {
 }
 
 /**
- * 3-parameter constructor
- * @param name
- * @param x
- * @param y
- */
-City::City(string name, int x, int y)
-    :name(std::move(name)), x(x), y(y) {}
-
-/**
  * Generates a random string for the city's name
- * @return
+ * @return string of 8 characters
  */
 string City::genRandom() {
     char *s;
@@ -45,9 +36,9 @@ string City::genRandom() {
 
 /**
  * Overloaded insertion operator
- * @param os
- * @param c
- * @return output
+ * @param os output
+ * @param c city being printed
+ * @return output to console
  */
 ostream &operator<<(ostream &os, const City &c) {
     return os << c.name << ", <" << c.x << ", " << c.y << ">" << endl;
@@ -55,8 +46,8 @@ ostream &operator<<(ostream &os, const City &c) {
 
 /**
  * Calculates the distance between two cities
- * @param city1
- * @return distance
+ * @param city1 city being compared to
+ * @return distance between cities
  */
 double City::getDistanceBetweenCities(const City &city1) {
     int distX = abs(getX() - city1.getX());
@@ -65,27 +56,21 @@ double City::getDistanceBetweenCities(const City &city1) {
 }
 
 /**
- * Getter for city name
- * @return name
- */
-inline const string &City::getName() const { return name; }
-
-/**
  * Getter for x value
- * @return x
+ * @return x value
  */
 inline int City::getX() const { return x; }
 
 /**
  * Getter for y value
- * @return y
+ * @return y value
  */
 inline int City::getY() const { return y; }
 
 /**
  * Overloaded equals operator
- * @param c
- * @return boolean
+ * @param c city being compared
+ * @return boolean true if cities are equal
  */
 bool City::operator==(const City &c) const {
     return (name == c.name) && (x == c.x) && (y == c.y);

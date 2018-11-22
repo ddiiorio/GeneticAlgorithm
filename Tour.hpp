@@ -20,13 +20,13 @@ private:
 public:
     Tour(bool);
     ~Tour() = default;
-    inline City & getCity(int);
+    City & getCity(int);
     void setCity(int, City&);
     void shuffleCities();
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
-    inline vector<City> &getTour();
+    vector<City> &getTour();
     friend ostream &operator << (ostream&, Tour&);
     bool operator == (Tour&);
     bool operator<(const Tour &other) const;

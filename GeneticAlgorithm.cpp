@@ -13,7 +13,7 @@
 Population GeneticAlgorithm::evolve(Population & p) {
     Population newPop;
     Tour fit = p.getFittestTour();
-    cout << fit.determineFitness() << endl;
+    //cout << fit.determineFitness() << endl;
     vector<Tour> newPopTours;
     newPopTours.push_back(fit);
     vector<Tour> parents = selectParents(p);
@@ -81,17 +81,18 @@ Tour GeneticAlgorithm::crossover(Tour t1, Tour t2) {
  * @param t tour being mutated
  */
 void GeneticAlgorithm::mutate(Tour &t) {
-    for (int tourPosition1 = 0; tourPosition1 < t.getTour().size(); ++tourPosition1){
+    for (unsigned long tourPosition1 = 0; tourPosition1 < t.getTour().size();
+        ++tourPosition1){
         auto randDbl = random.getRealInRange(0, 1);
         if (randDbl < MUTATION_RATE) {
             auto tourPosition2 = random.getIntegerInRange
                     (0, CITIES_IN_TOUR - 1);
             // get cities
-            City city1 = t.getCity(tourPosition1);
+            City city1 = t.getCity((int) tourPosition1);
             City city2 = t.getCity(tourPosition2);
 
             // swap
-            t.setCity(tourPosition1, city2);
+            t.setCity((int) tourPosition1, city2);
             t.setCity(tourPosition2, city1);
         }
     }
@@ -138,7 +139,7 @@ vector<Tour> GeneticAlgorithm::selectParents(Population &p) {
  * Getter for number of iterations the algorithm should be run
  * @return number of iterations
  */
-const int GeneticAlgorithm::getIterations() {
+int GeneticAlgorithm::getIterations() {
     return ITERATIONS;
 }
 

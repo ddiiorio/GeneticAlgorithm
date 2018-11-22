@@ -7,6 +7,7 @@
 #include <iostream>
 #include <utility>
 #include <random>
+#include "RandomNumGenerator.hpp"
 using namespace std;
 
 class City {
@@ -19,10 +20,8 @@ private:
 
 public:
     City();
-    City(string, int, int);
     string genRandom();
     double getDistanceBetweenCities(const City&);
-    inline const string &getName() const;
     inline int getX() const;
     inline int getY() const;
     bool operator == (const City&) const;

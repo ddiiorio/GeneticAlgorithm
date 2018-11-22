@@ -13,6 +13,8 @@ utility
 -
 random
 -
+RandomNumGenerator.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.cpp
 GeneticAlgorithm.hpp
@@ -26,6 +28,10 @@ RandomNumGenerator.hpp
 algorithm
 -
 
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.cpp
+Population.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 Tour.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
@@ -38,6 +44,10 @@ string
 random
 -
 
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.cpp
+Tour.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
+
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 vector
 -
@@ -47,4 +57,10 @@ math.h
 -
 City.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
+
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/main.cpp
+Population.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+GeneticAlgorithm.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
 

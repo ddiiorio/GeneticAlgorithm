@@ -40,10 +40,12 @@ void Tour::setCity(int position, City& city) {
 }
 
 /**
- * Shuffles cities in the tour
+ * Shuffles cities in the tour 'SHUFFLES' number of times
  */
 void Tour::shuffleCities() {
-    random_shuffle(cities.begin(), cities.end());
+    for (int i = 0; i < SHUFFLES; ++i) {
+        random_shuffle(cities.begin(), cities.end());
+    }
 }
 
 /**
@@ -53,13 +55,13 @@ void Tour::shuffleCities() {
 int Tour::getTourDistance() {
     if (distance == 0) {
         int tourDistance = 0;
-        for (int cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
-            City originCity = getCity(cityIndex);
+        for (unsigned long cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
+            City originCity = getCity((int) cityIndex);
             City toCity;
             // Check we're not on our tour's last city, if we are set our
             // tour's final destination city to our starting city
             if (cityIndex + 1 < cities.size()) {
-                toCity = getCity(cityIndex + 1);
+                toCity = getCity((int) cityIndex + 1);
             }
             else {
                 toCity = getCity(0);
@@ -98,7 +100,7 @@ bool Tour::containsCity(City city1) {
  * Getter for tour vector
  * @return cities vector
  */
-inline vector<City> &Tour::getTour() {
+vector<City> &Tour::getTour() {
     return cities;
 }
 
