@@ -25,7 +25,7 @@ Tour::Tour(bool child) : fitness{0}, distance{0} {
  * @return City at index
  */
 inline City & Tour::getCity(int position) {
-    return cities.at(position);
+    return cities.at(static_cast<unsigned long>(position));
 }
 
 /**
@@ -34,7 +34,7 @@ inline City & Tour::getCity(int position) {
  * @param city city at index
  */
 void Tour::setCity(int position, City& city) {
-    cities.at(position) = city;
+    cities.at(static_cast<unsigned long>(position)) = city;
     fitness = 0;
     distance = 0;
 }
@@ -45,8 +45,16 @@ void Tour::setCity(int position, City& city) {
 void Tour::shuffleCities() {
     for (int i = 0; i < SHUFFLES; ++i) {
         random_shuffle(cities.begin(), cities.end());
+        //swapCities();
     }
 }
+//
+//void Tour::swapCities() {
+//    auto tourPosition1 = random.getIntegerInRange(0, CITIES_IN_TOUR - 1);
+//    auto tourPosition2 = random.getIntegerInRange(0, CITIES_IN_TOUR - 1);
+//    cout << tourPosition1 << " " << tourPosition2 << endl;
+//    swap(cities.at(tourPosition1), cities.at(tourPosition2));
+//}
 
 /**
  * Calculates entire distance of the tour based on city order

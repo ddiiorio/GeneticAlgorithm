@@ -18,7 +18,7 @@ private:
     constexpr static int PARENT_POOL_SIZE = 5;
     constexpr static int NUMBER_OF_ELITES = 1;
     constexpr static int ITERATIONS = 1000;
-    constexpr static double IMPROVEMENT = 0.52;
+    constexpr static double IMPROVEMENT = 0.54;
     RandomNumGenerator random;
 
 public:

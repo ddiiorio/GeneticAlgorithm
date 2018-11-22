@@ -3,9 +3,10 @@
 //
 #include "RandomNumGenerator.hpp"
 
-RandomNumGenerator::RandomNumGenerator() {
-    mt19937 generator(rd());
-}
+/**
+ * Default constructor setting the generator
+ */
+RandomNumGenerator::RandomNumGenerator() : generator(rd()) { }
 
 /**
  * Generates a random integer in the supplied range
@@ -28,5 +29,3 @@ double RandomNumGenerator::getRealInRange(double minInclusive, double maxInclusi
     uniform_real_distribution<double> distribution(minInclusive, maxInclusive);
     return distribution(generator);
 }
-
-

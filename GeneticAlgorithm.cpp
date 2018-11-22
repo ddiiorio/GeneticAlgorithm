@@ -85,13 +85,8 @@ void GeneticAlgorithm::mutate(Tour &t) {
         if (randDbl < MUTATION_RATE) {
             auto tourPosition2 = random.getIntegerInRange
                     (0, CITIES_IN_TOUR - 1);
-            // get cities
-            City city1 = t.getCity((int) tourPosition1);
-            City city2 = t.getCity(tourPosition2);
-
             // swap
-            t.setCity((int) tourPosition1, city2);
-            t.setCity(tourPosition2, city1);
+            swap(t.getTour().at(tourPosition1), t.getTour().at(tourPosition2));
         }
     }
 }
@@ -148,7 +143,7 @@ void GeneticAlgorithm::optimize(Population &p) {
         if (cycles % 100 == 0 && cycles != 0) {
             cout << "Fitness level after " << cycles << " evolutions: "
                  << p.getFittestTour().determineFitness() << "\nImprovement factor: "
-                 << setprecision(4) << improvementFactor << "\n***" << endl;
+                 << setprecision(4) << improvementFactor << "\n..." << endl;
         }
         cycles++;
     }

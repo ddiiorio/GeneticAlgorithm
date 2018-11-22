@@ -29,7 +29,7 @@ Tour & Population::getTour(int index) {
  * @return fittest tour
  */
 Tour Population::getFittestTour() {
-    Tour fittest = tours.at(0);
+    auto fittest = tours.at(0);
     for (auto it = tours.begin() + 1; it < tours.end(); ++it) {
         if (fittest.determineFitness() <= it->determineFitness()) {
             fittest = *it;

@@ -16,13 +16,15 @@ private:
     vector<City> cities;
     double fitness;
     int distance;
+    //RandomNumGenerator random;
 
 public:
-    Tour(bool);
+    explicit Tour(bool);
     ~Tour() = default;
     City & getCity(int);
     void setCity(int, City&);
     void shuffleCities();
+    void swapCities();
     int getTourDistance();
     double determineFitness();
     bool containsCity(City);
