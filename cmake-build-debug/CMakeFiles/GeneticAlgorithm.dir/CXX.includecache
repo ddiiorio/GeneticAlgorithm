@@ -27,10 +27,8 @@ RandomNumGenerator.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
 algorithm
 -
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.cpp
-Population.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
+iomanip
+-
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 Tour.hpp
@@ -43,10 +41,6 @@ string
 -
 random
 -
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.cpp
-Tour.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Tour.hpp
 vector

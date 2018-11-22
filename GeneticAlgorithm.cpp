@@ -10,7 +10,7 @@
  * @param p population being genetically evolved
  * @return
  */
-Population GeneticAlgorithm::evolve(Population & p) {
+void GeneticAlgorithm::evolve(Population & p) {
     Population newPop;
     Tour fit = p.getFittestTour();
     //cout << fit.determineFitness() << endl;
@@ -25,8 +25,8 @@ Population GeneticAlgorithm::evolve(Population & p) {
         mutate(newPopTours.at(i));
     }
     newPop.setTours(newPopTours);
-
-    return newPop;
+    p = newPop;
+    //return newPop;
 }
 
 /**
@@ -99,7 +99,7 @@ void GeneticAlgorithm::mutate(Tour &t) {
 }
 
 /**
- * Creates two subsets of tours from the population and returns the fittest of
+ * Creates subsets of tours from the population and returns the fittest of
  * each subset
  * @param p Population for selection
  * @return vector of fittest tours from the population subset
@@ -109,38 +109,57 @@ vector<Tour> GeneticAlgorithm::selectParents(Population &p) {
     vector<Tour> popCopy = p.getTours();
     popCopy.erase(popCopy.begin());
     popCopy.shrink_to_fit();
-    vector<Tour> pool1;
-    for (int i = 0; i < PARENT_POOL_SIZE; ++i) {
-        random_shuffle(popCopy.begin(), popCopy.end());
-        auto randomNum = random.getIntegerInRange
-                (0, (int) p.getTours().size() - 1);
-        pool1.push_back(p.getTour(randomNum));
-        popCopy.erase(popCopy.begin());
-        popCopy.shrink_to_fit();
-    }
-    vector<Tour> pool2;
-    for (int i = 0; i < PARENT_POOL_SIZE; ++i) {
-        random_shuffle(popCopy.begin(), popCopy.end());
-        auto randomNum = random.getIntegerInRange
-                (0, (int) p.getTours().size() - 1);
-        pool2.push_back(p.getTour(randomNum));
-        popCopy.erase(popCopy.begin());
-        popCopy.shrink_to_fit();
-    }
-    sort(pool1.begin(), pool1.end());
-    sort(pool2.begin(), pool2.end());
     vector<Tour> parents;
-    parents.push_back(pool1.at(0));
-    parents.push_back(pool2.at(0));
+    for (int i = 0; i < NUMBER_OF_PARENTS; ++i) {
+        vector<Tour> pool;
+        for (int j = 0; j < PARENT_POOL_SIZE; ++j) {
+            random_shuffle(popCopy.begin(), popCopy.end());
+            auto randomNum = random.getIntegerInRange
+                    (0, (int) p.getTours().size() - 1);
+            pool.push_back(p.getTour(randomNum));
+            popCopy.erase(popCopy.begin());
+            popCopy.shrink_to_fit();
+        }
+        sort(pool.begin(), pool.end());
+        parents.push_back(pool.at(0));
+        pool.clear();
+    }
     return parents;
 }
 
 /**
- * Getter for number of iterations the algorithm should be run
- * @return number of iterations
+ * Evolves a population using the genetic algorithm for a minimum number of iterations
+ * specified by ITERATIONS static variable, and stops after it surpasses that number when
+ * the improvement factor is less than a specified number
+ * @param p population being evolved by algorithm
  */
-int GeneticAlgorithm::getIterations() {
-    return ITERATIONS;
+void GeneticAlgorithm::optimize(Population &p) {
+    cout << "Population's starting statistics : \nFitness level: " <<
+        p.getFittestTour().determineFitness() << "\nFittest tour's total distance: " <<
+        p.getFittestTour().getTourDistance() << endl;
+    cout << "============================================" << endl;
+    cout << "Evolving... please wait..." << endl;
+    int baseDistance = p.getBaseDistance();
+    double improvementFactor{0.0};
+    int cycles{0};
+
+    while (cycles < ITERATIONS || improvementFactor > IMPROVEMENT) {
+        evolve(p);
+        improvementFactor = (double) p.getFittestTour().getTourDistance()
+                            / (double) baseDistance;
+        if (cycles % 100 == 0 && cycles != 0) {
+            cout << "Fitness level after " << cycles << " evolutions: "
+                 << p.getFittestTour().determineFitness() << "\nImprovement factor: "
+                 << setprecision(4) << improvementFactor << "\n***" << endl;
+        }
+        cycles++;
+    }
+
+    cout << "============================================" << endl;
+    cout << "Population's statistics after " << ITERATIONS << " evolutions: "
+         << "\nFitness level: " << p.getFittestTour().determineFitness() <<
+         "\nFittest tour's total distance: " <<
+         p.getFittestTour().getTourDistance() << endl;
 }
 
 

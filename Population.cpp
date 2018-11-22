@@ -42,7 +42,7 @@ Tour Population::getFittestTour() {
  * Getter for base distance
  * @return base distance
  */
-inline int Population::getBaseDistance() {
+int Population::getBaseDistance() {
     return baseDistance;
 }
 

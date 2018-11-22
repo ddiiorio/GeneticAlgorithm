@@ -19,7 +19,7 @@ public:
     vector<Tour> &getTours();
     Tour & getTour(int);
     Tour getFittestTour();
-    inline int getBaseDistance();
+    int getBaseDistance();
 };
 
 

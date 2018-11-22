@@ -7,6 +7,7 @@
 #include "Population.hpp"
 #include "RandomNumGenerator.hpp"
 #include <algorithm>
+#include <iomanip>
 
 class GeneticAlgorithm {
 private:
@@ -15,17 +16,18 @@ private:
     constexpr static int NUMBER_OF_PARENTS = 2;
     constexpr static int PARENT_POOL_SIZE = 5;
     constexpr static int NUMBER_OF_ELITES = 1;
-    constexpr static int ITERATIONS = 200;
+    constexpr static int ITERATIONS = 1000;
+    constexpr static double IMPROVEMENT = 0.6;
     RandomNumGenerator random;
 
 public:
     GeneticAlgorithm() = default;
-    static int getIterations();
-    Population evolve(Population&);
+    void evolve(Population&);
     void selection(Population&) const;
     Tour crossover(Tour, Tour);
     void mutate(Tour &t) ;
     vector<Tour> selectParents(Population &);
+    void optimize(Population&);
 };
 
 #endif //GENETICALGORITHM_GENETICALGORITHM_HPP
