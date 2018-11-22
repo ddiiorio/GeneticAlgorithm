@@ -13,7 +13,6 @@
 void GeneticAlgorithm::evolve(Population & p) {
     Population newPop;
     Tour fit = p.getFittestTour();
-    //cout << fit.determineFitness() << endl;
     vector<Tour> newPopTours;
     newPopTours.push_back(fit);
     vector<Tour> parents = selectParents(p);
@@ -26,7 +25,6 @@ void GeneticAlgorithm::evolve(Population & p) {
     }
     newPop.setTours(newPopTours);
     p = newPop;
-    //return newPop;
 }
 
 /**
@@ -161,7 +159,3 @@ void GeneticAlgorithm::optimize(Population &p) {
          "\nFittest tour's total distance: " <<
          p.getFittestTour().getTourDistance() << endl;
 }
-
-
-
-

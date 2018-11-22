@@ -2,10 +2,10 @@
 #include "GeneticAlgorithm.hpp"
 
 int main() {
-    GeneticAlgorithm zz{};
-    Population aa;
+    GeneticAlgorithm geneticAlgorithm{};
+    Population population;
 
-    zz.optimize(aa);
+    geneticAlgorithm.optimize(population);
 
     return 0;
 }

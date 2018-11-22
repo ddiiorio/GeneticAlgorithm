@@ -15,12 +15,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Population.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Population.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Population.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GeneticAlgorithm.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GeneticAlgorithm.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GeneticAlgorithm.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GeneticAlgorithm.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/GeneticAlgorithm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GeneticAlgorithm.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GeneticAlgorithm.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GeneticAlgorithm.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -52,24 +48,24 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cpp" value="9449" />
-          <entry key="hpp" value="1826" />
-          <entry key="txt" value="831" />
+          <entry key="hpp" value="1834" />
+          <entry key="txt" value="964" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="8" />
           <entry key="Doxygen file" value="51" />
-          <entry key="ObjectiveC" value="11224" />
-          <entry key="PLAIN_TEXT" value="823" />
+          <entry key="ObjectiveC" value="11232" />
+          <entry key="PLAIN_TEXT" value="956" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="GeneticAlgorithm (disassembly)" value="6" />
-          <entry key="cpp" value="39" />
+          <entry key="cpp" value="40" />
           <entry key="h" value="11" />
-          <entry key="hpp" value="42" />
+          <entry key="hpp" value="43" />
           <entry key="tcc" value="3" />
           <entry key="txt" value="4" />
         </counts>
@@ -78,36 +74,30 @@
         <counts>
           <entry key="CMakeLists.txt" value="4" />
           <entry key="Disassembly" value="6" />
-          <entry key="ObjectiveC" value="95" />
+          <entry key="ObjectiveC" value="97" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state>
+              <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Population.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-828">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GeneticAlgorithm.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <caret line="133" column="49" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+            <state relative-caret-position="2070">
+              <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -115,20 +105,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GeneticAlgorithm.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <state relative-caret-position="368">
+              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding>
                 <element signature="e#134#159#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Population.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -156,9 +137,9 @@
         <option value="$PROJECT_DIR$/Tour.hpp" />
         <option value="$PROJECT_DIR$/Population.hpp" />
         <option value="$PROJECT_DIR$/Population.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/GeneticAlgorithm.hpp" />
         <option value="$PROJECT_DIR$/GeneticAlgorithm.cpp" />
+        <option value="$PROJECT_DIR$/GeneticAlgorithm.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -258,7 +239,7 @@
       <workItem from="1542693798070" duration="5718000" />
       <workItem from="1542751196915" duration="15058000" />
       <workItem from="1542832245776" duration="3295000" />
-      <workItem from="1542848759773" duration="7493000" />
+      <workItem from="1542848759773" duration="10954000" />
     </task>
     <task id="LOCAL-00001" summary="Adding city class">
       <created>1541742592270</created>
@@ -386,21 +367,28 @@
       <option name="project" value="LOCAL" />
       <updated>1542848839481</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Modified genetic algorithm to run a minimum of 1000 iterations and then stop after improvement factor is below a certain level">
+      <created>1542861036884</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1542861036884</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73203000" />
+    <option name="totallyTimeSpent" value="76664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1039" height="909" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.54329" visible="true" weight="0.13557595" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.54329" visible="true" weight="0.17940877" />
       <window_info id="Structure" order="1" sideWeight="0.45670995" side_tool="true" weight="0.26209432" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32901555" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32853404" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.9502618" />
       <window_info anchor="bottom" x="5" y="45" width="1633" height="799" id="Debug" order="3" weight="0.697644" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -445,7 +433,8 @@
     <MESSAGE value="Changing genetic algorithm and testing" />
     <MESSAGE value="Adding comments to classes and removing unused functions" />
     <MESSAGE value="Adding comments to classes and refactoring functions to remove warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding comments to classes and refactoring functions to remove warnings" />
+    <MESSAGE value="Modified genetic algorithm to run a minimum of 1000 iterations and then stop after improvement factor is below a certain level" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified genetic algorithm to run a minimum of 1000 iterations and then stop after improvement factor is below a certain level" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/cygwin64/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/bits/predefined_ops.h">
@@ -523,23 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/City.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#110#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/City.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tour.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -559,32 +531,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Population.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-828">
+        <state relative-caret-position="322">
           <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/City.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-544">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GeneticAlgorithm.hpp">
+    <entry file="file://$PROJECT_DIR$/City.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
-            <element signature="e#134#159#0" expanded="true" />
+            <element signature="e#110#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GeneticAlgorithm.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="133" column="49" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+        <state relative-caret-position="2070">
+          <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GeneticAlgorithm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding>
+            <element signature="e#134#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

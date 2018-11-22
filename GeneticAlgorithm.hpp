@@ -1,6 +1,7 @@
 //
 // Created by danny on 2018-11-09.
 //
+
 #ifndef GENETICALGORITHM_GENETICALGORITHM_HPP
 #define GENETICALGORITHM_GENETICALGORITHM_HPP
 
@@ -17,7 +18,7 @@ private:
     constexpr static int PARENT_POOL_SIZE = 5;
     constexpr static int NUMBER_OF_ELITES = 1;
     constexpr static int ITERATIONS = 1000;
-    constexpr static double IMPROVEMENT = 0.6;
+    constexpr static double IMPROVEMENT = 0.52;
     RandomNumGenerator random;
 
 public:
