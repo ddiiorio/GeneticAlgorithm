@@ -2,6 +2,7 @@
 // Created by danny on 2018-11-09.
 //
 
+#include <chrono>
 #include "GeneticAlgorithm.hpp"
 
 /**
@@ -21,7 +22,7 @@ void GeneticAlgorithm::evolve(Population & p) {
         newPopTours.push_back(child);
     }
     for (int i = NUMBER_OF_ELITES; i < Population::getSize(); i++) {
-        mutate(newPopTours.at(i));
+        mutate(newPopTours.at((unsigned long) i));
     }
     newPop.setTours(newPopTours);
     p = newPop;
@@ -55,7 +56,8 @@ Tour GeneticAlgorithm::crossover(Tour t1, Tour t2) {
     vector<City> parent1 = t1.getTour();
     vector<City> parent2 = t2.getTour();
     // Get random cutoff number
-    auto endPos = random.getIntegerInRange(0, (int) parent1.size() - 1);
+    auto endPos = RandomNumGenerator::getInstance().
+            getIntegerInRange(0, (int) parent1.size() - 1);
 
     // Loop and add the sub tour from parent1 to our child
     for (int i = 0; i <= endPos; ++i) {
@@ -81,12 +83,14 @@ Tour GeneticAlgorithm::crossover(Tour t1, Tour t2) {
 void GeneticAlgorithm::mutate(Tour &t) {
     for (unsigned long tourPosition1 = 0; tourPosition1 < t.getTour().size();
         ++tourPosition1){
-        auto randDbl = random.getRealInRange(0, 1);
+        auto randDbl = RandomNumGenerator::getInstance()
+                .getRealInRange(0, 1);
         if (randDbl < MUTATION_RATE) {
-            auto tourPosition2 = random.getIntegerInRange
-                    (0, CITIES_IN_TOUR - 1);
+            auto tourPosition2 = RandomNumGenerator::getInstance()
+                    .getIntegerInRange(0, CITIES_IN_TOUR - 1);
             // swap
-            swap(t.getTour().at(tourPosition1), t.getTour().at(tourPosition2));
+            swap(t.getTour().at(tourPosition1),
+                    t.getTour().at((unsigned long) tourPosition2));
         }
     }
 }
@@ -106,9 +110,10 @@ vector<Tour> GeneticAlgorithm::selectParents(Population &p) {
     for (int i = 0; i < NUMBER_OF_PARENTS; ++i) {
         vector<Tour> pool;
         for (int j = 0; j < PARENT_POOL_SIZE; ++j) {
-            random_shuffle(popCopy.begin(), popCopy.end());
-            auto randomNum = random.getIntegerInRange
-                    (0, (int) p.getTours().size() - 1);
+            long seed = chrono::system_clock::now().time_since_epoch().count();
+            shuffle(popCopy.begin(), popCopy.end(), default_random_engine(seed));
+            auto randomNum = RandomNumGenerator::getInstance()
+                    .getIntegerInRange(0, (int) p.getTours().size() - 1);
             pool.push_back(p.getTour(randomNum));
             popCopy.erase(popCopy.begin());
             popCopy.shrink_to_fit();

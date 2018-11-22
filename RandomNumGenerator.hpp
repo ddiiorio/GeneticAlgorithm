@@ -12,9 +12,14 @@ using namespace std;
 
 class RandomNumGenerator {
 public:
-    RandomNumGenerator();
+    static RandomNumGenerator& getInstance();
+    RandomNumGenerator(const RandomNumGenerator&) = delete;
+    void operator=(const RandomNumGenerator&) = delete;
     int getIntegerInRange(int, int);
     double getRealInRange(double, double);
+
+private:
+    RandomNumGenerator();
     random_device rd;
     mt19937 generator;
 };

@@ -4,6 +4,15 @@
 #include "RandomNumGenerator.hpp"
 
 /**
+ * Gets an instance of the singleton class
+ * @return RandomNumGenerator object
+ */
+RandomNumGenerator &RandomNumGenerator::getInstance() {
+    static RandomNumGenerator random;
+    return random;
+}
+
+/**
  * Default constructor setting the generator
  */
 RandomNumGenerator::RandomNumGenerator() : generator(rd()) { }

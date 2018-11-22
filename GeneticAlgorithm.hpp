@@ -19,7 +19,6 @@ private:
     constexpr static int NUMBER_OF_ELITES = 1;
     constexpr static int ITERATIONS = 1000;
     constexpr static double IMPROVEMENT = 0.54;
-    RandomNumGenerator random;
 
 public:
     GeneticAlgorithm() = default;

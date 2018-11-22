@@ -17,6 +17,8 @@ RandomNumGenerator.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.cpp
+chrono
+-
 GeneticAlgorithm.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
 
@@ -29,10 +31,6 @@ algorithm
 -
 iomanip
 -
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.cpp
-Population.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
 Tour.hpp
@@ -59,10 +57,6 @@ math.h
 -
 City.hpp
 /cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/City.hpp
-
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/main.cpp
-Population.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/Population.hpp
-GeneticAlgorithm.hpp
-/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/GeneticAlgorithm.hpp
+RandomNumGenerator.hpp
+/cygdrive/c/Users/danny/CLionProjects/GeneticAlgorithm/RandomNumGenerator.hpp
 

@@ -29,32 +29,24 @@ inline City & Tour::getCity(int position) {
 }
 
 /**
- * Inserts a city at a specified position in a tour
- * @param position index position
- * @param city city at index
- */
-void Tour::setCity(int position, City& city) {
-    cities.at(static_cast<unsigned long>(position)) = city;
-    fitness = 0;
-    distance = 0;
-}
-
-/**
  * Shuffles cities in the tour 'SHUFFLES' number of times
  */
 void Tour::shuffleCities() {
     for (int i = 0; i < SHUFFLES; ++i) {
-        random_shuffle(cities.begin(), cities.end());
-        //swapCities();
+        swapCities();
     }
 }
-//
-//void Tour::swapCities() {
-//    auto tourPosition1 = random.getIntegerInRange(0, CITIES_IN_TOUR - 1);
-//    auto tourPosition2 = random.getIntegerInRange(0, CITIES_IN_TOUR - 1);
-//    cout << tourPosition1 << " " << tourPosition2 << endl;
-//    swap(cities.at(tourPosition1), cities.at(tourPosition2));
-//}
+
+/**
+ * Swaps two cities in a tour from random indexes
+ */
+void Tour::swapCities() {
+    auto tourPosition1 = RandomNumGenerator::getInstance().
+            getIntegerInRange(0, CITIES_IN_TOUR - 1);
+    auto tourPosition2 = RandomNumGenerator::getInstance().
+            getIntegerInRange(0, CITIES_IN_TOUR - 1);
+    swap(cities.at((unsigned long) tourPosition1), cities.at((unsigned long) tourPosition2));
+}
 
 /**
  * Calculates entire distance of the tour based on city order

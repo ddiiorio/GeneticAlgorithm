@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <math.h>
 #include "City.hpp"
+#include "RandomNumGenerator.hpp"
 
 class Tour {
 private:
@@ -16,13 +17,11 @@ private:
     vector<City> cities;
     double fitness;
     int distance;
-    //RandomNumGenerator random;
 
 public:
     explicit Tour(bool);
     ~Tour() = default;
     City & getCity(int);
-    void setCity(int, City&);
     void shuffleCities();
     void swapCities();
     int getTourDistance();
@@ -31,7 +30,7 @@ public:
     vector<City> &getTour();
     friend ostream &operator << (ostream&, Tour&);
     bool operator == (Tour&);
-    bool operator<(const Tour &other) const;
+    bool operator<(const Tour&) const;
 };
 
 #endif //GENETICALGORITHM_TOUR_HPP

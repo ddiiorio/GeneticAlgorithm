@@ -7,11 +7,8 @@
  * Default constructor that generates random values for x, y, and name
  */
 City::City() {
-    random_device rd;
-    mt19937 generator(rd());
-    uniform_int_distribution<int> distrInt(MIN, MAP_BOUNDARY);
-    x = distrInt(generator);
-    y = distrInt(generator);
+    x = RandomNumGenerator::getInstance().getIntegerInRange(MIN, MAP_BOUNDARY);
+    y = RandomNumGenerator::getInstance().getIntegerInRange(MIN, MAP_BOUNDARY);
     name = genRandom();
 }
 
@@ -20,18 +17,17 @@ City::City() {
  * @return string of 8 characters
  */
 string City::genRandom() {
-    char *s;
+    string rName;
     int len = 8;
     static const char alphanum[] =
             "0123456789"
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz";
-
+    int stringLength = sizeof(alphanum) - 1;
     for (int i = 0; i < len; ++i) {
-        s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+        rName += alphanum[rand() % stringLength];
     }
-    s[len] = 0;
-    return s;
+    return rName;
 }
 
 /**
@@ -75,4 +71,3 @@ inline int City::getY() const { return y; }
 bool City::operator==(const City &c) const {
     return (name == c.name) && (x == c.x) && (y == c.y);
 }
-
