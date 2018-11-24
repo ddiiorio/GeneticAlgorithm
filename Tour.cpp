@@ -58,11 +58,12 @@ int Tour::getTourDistance() {
         for (unsigned long cityIndex = 0; cityIndex < cities.size(); cityIndex++) {
             City originCity = getCity((int) cityIndex);
             City toCity;
-            // Check we're not on our tour's last city, if we are set our
-            // tour's final destination city to our starting city
+            // Check we're not on our tour's last city
             if (cityIndex + 1 < cities.size()) {
                 toCity = getCity((int) cityIndex + 1);
             }
+            // if we are on our tour's final destination city, set it to our starting city
+            // so we get the distance between the first and last city
             else {
                 toCity = getCity(0);
             }

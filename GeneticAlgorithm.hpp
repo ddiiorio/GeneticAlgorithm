@@ -9,6 +9,7 @@
 #include "RandomNumGenerator.hpp"
 #include <algorithm>
 #include <iomanip>
+#include <chrono>
 
 class GeneticAlgorithm {
 private:

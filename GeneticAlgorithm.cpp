@@ -2,7 +2,6 @@
 // Created by danny on 2018-11-09.
 //
 
-#include <chrono>
 #include "GeneticAlgorithm.hpp"
 
 /**
